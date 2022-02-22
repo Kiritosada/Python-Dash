@@ -23,3 +23,12 @@ data = [
                text=new_df['Country'],
                mode='markers',
                marker=dict(size=new_df['Confirmed'] / 100,color=new_df['Confirmed'] / 100, showscale=True))
+    ]
+
+# Preparing layout
+layout = go.Layout(title='Corona Virus Confirmed Cases', xaxis_title="Recovered Cases",
+                   yaxis_title="Unrecovered Cases", hovermode='closest')
+
+# Plot the figure and saving in a html file
+fig = go.Figure(data=data, layout=layout)
+pyo.plot(fig, filename='bubblechart.html')
